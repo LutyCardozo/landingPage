@@ -54,7 +54,49 @@ function showSlide() {
   i = (i + 1) % slides.length;
 }
 
+
+
+
 if (slides.length > 0) {
   showSlide(); // mostrar primero
   setInterval(showSlide, 4000); // cada 4s cambia
+}
+
+
+// Seleccionamos el formulario usando su atributo `name`
+const form = document.forms['newsletter-form'];
+
+// Si el formulario existe, agregamos un "escuchador" de eventos
+if (form) {
+    form.addEventListener('submit', function(event) {
+        // Esto evita que la página se recargue
+        event.preventDefault();
+
+        // Creamos un nuevo objeto FormData para capturar los datos del formulario
+        const formData = new FormData(form);
+
+        // Simulamos el envío a Netlify (Netlify procesa esto automáticamente)
+        fetch(form.action, {
+            method: 'POST',
+            body: formData,
+        })
+        .then(() => {
+            // Cuando el envío es exitoso, mostramos el mensaje
+            const successMessage = document.createElement('p');
+            successMessage.textContent = '¡Formulario enviado con éxito!';
+            successMessage.style.color = 'green';
+            successMessage.style.marginTop = '15px';
+            
+            // Agregamos el mensaje justo después del formulario
+            form.after(successMessage);
+            
+            // Opcional: Limpiamos los campos del formulario
+            form.reset();
+        })
+        .catch((error) => {
+            // En caso de error, mostramos un mensaje
+            console.error('Error al enviar el formulario:', error);
+            alert('Hubo un error al enviar el formulario. Por favor, inténtalo de nuevo.');
+        });
+    });
 }
