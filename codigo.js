@@ -63,8 +63,19 @@ if (slides.length > 0) {
 }
 
 
+
+const formulario = document.querySelector("form[name=newsletter-form]");
+
+formulario.addEventListener("submit", cambioAsunto);
+
+function cambioAsunto (){
+  const asunto = document.querySelector("input=[name=subject]");
+  const nombre = document.querySelector("input[name=nombre]");
+  asunto.value="%{submissionId} - Consulta de "+nombre.value+" en el formulario %{formName}";
+}
+
 // Seleccionamos el formulario usando su atributo `name`
-const form = document.forms['newsletter-form'];
+/* const form = document.forms['newsletter-form'];
 
 // Si el formulario existe, agregamos un "escuchador" de eventos
 if (form) {
@@ -99,4 +110,4 @@ if (form) {
             alert('Hubo un error al enviar el formulario. Por favor, inténtalo de nuevo.');
         });
     });
-}
+} */
