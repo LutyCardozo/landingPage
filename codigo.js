@@ -69,8 +69,8 @@ const formulario = document.querySelector("form[name=newsletter-form]");
 formulario.addEventListener("submit", cambioAsunto);
 
 function cambioAsunto() {
-  const asunto = document.querySelector("[input name=subject]");
-  const nombre = document.querySelector("[input name=nombre]");
+  const asunto = document.querySelector("input[name=subject]");
+  const nombre = document.querySelector("input[name=nombre]");
   asunto.value = "%{submissionId} - Consulta de "+nombre.value+" en el formulario %{formName}";
 }
 
