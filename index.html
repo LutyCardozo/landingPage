@@ -354,6 +354,7 @@
                         <h4>Subscribe to newsletter</h4>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure alias rem neque quod fugit harum dolores culpa ad rerum quasi?</p>
                         <form name="newsletter-form" method="POST" data-netlify="true">
+                          <input type="hidden" name="subject" value="%{submissionId} - Consulta de %{nombre} en el fomrulario %{newsletter-form}">
                           <input type="email" name="email" id="email" placeholder="enter your email">
                           <input type="text" name="nombre" placeholder="nombre">
                           <button type="submit" class="btn btn-dark btn-block">Subscribe</button>
