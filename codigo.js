@@ -64,7 +64,7 @@ if (slides.length > 0) {
 
 
 
-const formulario = document.querySelector("[form name=newsletter-form]");
+const formulario = document.querySelector("form[name=newsletter-form]");
 
 formulario.addEventListener("submit", cambioAsunto);
 
