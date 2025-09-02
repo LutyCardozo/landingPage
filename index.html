@@ -362,7 +362,8 @@
             <form name="newsletter-form" method="POST" data-netlify="true">
               <input type="email" name="email" id="email" placeholder="enter your email">
               <input type="text" name="nombre" placeholder="nombre">
-              <button type="submit" class="btn btn-dark btn-block">Subscribe</button>
+              <input type="hidden" name="subject" value="9 - Nueva consulta de %{nombre}">
+              <button type="submit" class="btn-dark">Subscribe</button>
             </form>
           </div>
           <i class="fab fa-linkedin"></i>
