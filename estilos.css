@@ -118,6 +118,8 @@ img{
     opacity: 0;
     transition: opacity 1.5s ease-in-out;
   }
+
+ 
   
   .banner img.active {
     opacity: 1;
@@ -503,6 +505,8 @@ img{
     font-size: 20px;
     transition: 0.3s;
   }
+
+ 
 
 @media (max-width: 960px) {
     .text-xxl {

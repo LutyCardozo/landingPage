@@ -6,15 +6,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
-    integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Preload CSS -->
+  <link rel="preload" href="estilos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="estilos.css"></noscript>
+
+  <!-- Preload Font Awesome -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"></noscript>
+
+  <!-- Preload Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="estilos.css">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"></noscript>
+
+  <!-- Favicon -->
   <link rel="shortcut icon" href="imgs/7641056729f72ed33a65888d2b2cfb61.jpg" type="image/x-icon">
 </head>
 
@@ -92,7 +99,12 @@
       <div class="banner">
         <img src="imgs/banner1.webp" alt="Promo 1">
         <img src="imgs/sale.webp" alt="Promo 2">
-        <img src="imgs/skirt.webp" alt="Promo 3">
+        <picture>
+          <!-- cuando sea mobile (pantallas hasta 960px) -->
+          <source srcset="imgs/skirtsbanner.webp" media="(max-width: 960px)">
+          <!-- cuando sea desktop (lo que no entre en el media query) -->
+          <img src="imgs/skirtsD.webp" alt="Promo 3">
+        </picture>
       </div>
 
     </div>
@@ -112,8 +124,13 @@
       </div>
       <div class="categories-card">
         <a href="#">
-          <img src="imgs/skirts.webp" alt="" class="categories-preview">
-        </a>
+          <picture>
+            <!-- Versión mobile -->
+            <source srcset="imgs/skirtsM.webp" media="(max-width: 960px)">
+            <!-- Versión desktop -->
+            <img src="imgs/skirtsD.webp" alt="" class="categories-preview">
+          </picture>
+         </a>
         <a href="" class="btn btn-primary">Get started</a>
       </div>
     </div>
@@ -400,7 +417,8 @@
     </div>
   </footer>
 
-  <script src="codigo.js"></script>
+  <!-- Deferir el script -->
+  <script src="codigo.js" defer></script>
 </body>
 
 </html>
