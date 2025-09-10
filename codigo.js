@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (faqContainer) {
     faqContainer.addEventListener('click', (e) => {
       const groupHeader = e.target.closest('.faq-group-header');
+      if (!groupHeader) return;
 
       if (!groupHeader) return;
 
